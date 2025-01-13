@@ -1,0 +1,137 @@
+  /* Light mode styles */
+  .light-mode {
+    background-color: #ffffff;
+    color: #000000;
+    --carousel-text-color: #000000; /* Black text color for light mode */
+    --btn-text-color: #000000; /* Black text color for buttons in light mode */
+    --icon-color: #000000; /* Black icon color for light mode */
+  }
+
+  /* Dark mode styles */
+  .dark-mode {
+    background-color: #000000;
+    color: #ffffff;
+    --carousel-text-color: #ffffff; /* White text color for dark mode */
+    --btn-text-color: #ffffff; /* White text color for buttons in dark mode */
+    --icon-color: #ffffff; /* White icon color for dark mode */
+
+  }
+
+
+    /* Initially hide the fault image */
+    #img_light_mode, #img_dark_mode {
+      display: none;
+    }
+    /* Show light mode image when in light mode */
+    .light-mode #img_light_mode {
+      display: block;
+    }
+    /* Show dark mode image when in dark mode */
+    .dark-mode #img_dark_mode {
+      display: block;
+    }
+
+
+
+
+  .mode-icons i {
+    color: var(--icon-color);
+  }
+    /* Indicating Links */
+    img:hover {
+      opacity: 0.5;
+    }
+
+    /* For adding contribution to the photography owner */
+    .photographer-overlay {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      color: #333;
+    }
+ 
+    .img-fluid {
+      max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+      height: auto; /* Maintain the image's aspect ratio */
+      min-width: 300px; /* Set minimum width */
+      min-height: 300px; /* Set minimum height */
+      margin-top: 12px; /* Gleiche Höhe wie die margin-left der Überschrift */
+      border-radius: 0.5em;
+
+    }
+
+    .row {
+      display: flex;
+      align-items: flex-start; /* Stellt sicher, dass die Elemente oben ausgerichtet sind */
+    }
+    
+    .col-md-5 a {
+      display: flex;
+      align-items: flex-start; /* Stellt sicher, dass das Bild oben ausgerichtet ist */
+    }
+    
+    /* Optional: Zusätzliche Anpassungen für den Abstand */
+    .featurette-heading {
+      margin: 0; /* Entfernt zusätzliche Abstände */
+      padding: 0; /* Entfernt zusätzliche Abstände */
+    }
+    
+    .lead {
+      margin-top: 1rem; /* Abstand zwischen Überschrift und Text */
+    }
+    
+
+
+    
+    .featurette {
+      margin-bottom: 40px; /* Adjust margin as needed */
+    }
+
+    .align-items-start {
+      align-items: flex-start; /* Align items at the start of the flex container */
+    }
+
+    /* Adding styles, color to Carousel that it matches with explore page and Light/dark mode */
+
+
+
+/* Apply text color to carousel items */
+.carousel-caption {
+    color: var(--carousel-text-color);
+}
+
+
+/* Apply text color to buttons */
+.btn-primary {
+    color: var(--btn-text-color) !important;
+}
+
+
+
+/* Grundlegendes Styling für die Bildikonen */
+.icon-img {
+  width: 140px; /* Feste Breite für die Bilder */
+  height: 140px; /* Feste Höhe für die Bilder */
+  margin-bottom: 15px; /* Abstand zum nachfolgenden Text */
+}
+
+/* Sicherstellen, dass die Inhalte der Spalten zentriert sind */
+.col-lg-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Zentriert die Inhalte horizontal */
+  text-align: center; /* Zentriert den Text */
+  justify-content: center; /* Zentriert die Inhalte vertikal */
+}
+
+/* Optionale Anpassungen für mobile Geräte */
+@media (max-width: 767px) {
+  .icon-img {
+    width: 100px; /* Kleinere Breite für mobile Geräte */
+    height: 100px; /* Kleinere Höhe für mobile Geräte */
+  }
+}

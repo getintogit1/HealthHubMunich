@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, shrink-to-fit=no">
+
+    <title>{% block title %}Default Title{% endblock %}</title>
+        
+        
+    {% include 'snippets/header.html' %}
+   
+
+    <!-- Add Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" /> <!--leaflet style-->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""> </script> <!---linking leaflet js-->
+
+    <!---Add Mini Map Plugin-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-minimap/dist/Control.MiniMap.min.css" />
+    <script src="https://unpkg.com/leaflet-minimap/dist/Control.MiniMap.min.js"></script>
+
+    <!---Add GEOJSON File-->
+
+
+    <!---Add 3D OSM Modeling-->
+    <script src="https://cdn.osmbuildings.org/classic/0.2.2b/OSMBuildings-Leaflet.js"></script>
+    
+
+   <!---FOOTER STYLES-->
+   <!-- NECCECARY STYLE SHEETS FOR GOOD LOOKING SOCIAL MEDIA ICONS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!---FOOTER STYLES END-->
+
+
+    <!---Analyse PAGE-->
+    <script src="https://unpkg.com/react@16.9.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.9.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/d3@5.11.0/dist/d3.min.js"></script>
+    <script src="https://unpkg.com/topojson@3.0.2/dist/topojson.min.js"></script>
+    <script src="https://unpkg.com/d3-simple-slider@2.0.0/dist/d3-simple-slider.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-bootstrap@2.10.2/dist/react-bootstrap.min.js"></script>
+
+    <link
+    href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://unpkg.com/react-dropdown-browser@1.8.0/style.css"
+    rel="stylesheet"
+  />
+      <!---Analyse PAGE END-->
+
+
+    
+
+</head>
+<body>
+
+    <!--- Body-->
+    <!--- No matter how big our website is, our foote will always be on the bottom -->
+    <style type="text/css"> 
+       .main{min-height:    100vh; 
+             height:        100% ;
+             }
+
+        .leaflet-popup-content {
+            font-family: var(--bs-font-sans-serif);
+            }
+
+        body{
+            width:100% ;
+        }
+
+        
+p {
+    font-size: 30px; /* Adjust this value to make the text larger or smaller */
+  }
+  
+  p.lead{
+    font-size: 30px;
+  }
+  
+  @media (max-width: 600px) {
+    p {
+      font-size: 20px; /* Adjust for smaller screens */
+    }
+    p.lead{
+      font-size: 20px;
+    }
+  }
+
+
+
+
+
+    </style>
+        <!--- This Div should occupy the entire screen, for styling reasons(everybody does it...)-->
+    <div class="main">
+        {% block content %}
+        {% endblock content %}
+        
+    </div>
+
+
+    
+    <footer>
+    {% include 'snippets/footer.html' %}
+    <!--- End Body-->
+    </footer>
+</body>
+
+</html>

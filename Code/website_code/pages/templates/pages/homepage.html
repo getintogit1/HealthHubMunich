@@ -1,0 +1,343 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/homepage.rtl.css' %}">
+<link rel="stylesheet" href="{% static 'styles/homepage.css' %}">
+<link rel="stylesheet" href="{% static 'styles/homepage_colorchanging.css' %}">
+
+
+
+  <!--COLOR SCHEME MODES -->
+
+<main>
+  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <svg class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <rect width="100%" height="100%" fill="#8BD1E1"/>        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>Karte Erkunden </h1>
+            <p class="opacity-75">Begeben Sie sich auf eine Entdeckungsreise durch Münchens Gesundheitswesen.</p>
+            <p><a class="btn btn-lg btn-primary"  href="{% url 'explore' %}">Mehr Infos</a></p> 
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <rect width="100%" height="100%" fill="#C0E4D8"/>        <div class="container">
+          <div class="carousel-caption">
+            <h1>Informationen</h1>
+            <p>Stärken Sie sich mit umfassenden Gesundheitsinformationen</p>
+            <p><a class="btn btn-lg btn-primary"   href="{% url 'health-information' %}">Mehr Infos</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <rect width="100%" height="100%" fill="#90C8B5"/> <!-- Change the fill color here -->
+        </svg>        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>Analyse</h1>
+            <p>Nutzen Sie unsere hochmodernen Datenanalysetools, um Trends zu erkennen und die Vergangenheit zu erforschen. </p>
+            <p><a class="btn btn-lg btn-primary"  href="{% url 'analyse' %}">Mehr Infos</a></p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+<!-- For and Bacl Buttons-->
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
+  </div>
+
+
+  <!-- 
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+   
+
+    <div class="row featurette">
+      <div class="col-md-7">
+
+        <h2 class="featurette-heading fw-normal lh-1">Wo ist das nächste Krankenhaus?  <span style="color:#00AA89 !important;" class="text-body-secondary"  id="hospitalName"></span></h2>
+
+        <p class="lead" id="nearestHospitalInfo"><span id="hospitalName"></span>Adresse: <span id="hospitalAddress"></span><br>Entfernung: <span id="distanceToHospital"></span></p>
+      </div>
+
+
+
+      <div id="map" style="height: 600px; width: 1464px;"></div>
+      <script type="text/javascript" src="{% static 'frontend/homepage_js.js' %}"></script>
+
+      <!-- Include geojson_loader.js script -->
+      {% comment %} <div id="map" style="height: 600px; width: 1200px;"></div>
+      <script type="text/javascript" src="{% static 'frontend/main.js' %}"></script>
+      <script src="{% static 'frontend/geojsonloader.js' %}"></script> {% endcomment %}
+
+
+     
+
+    </div>
+    <!-- Three columns of text below the carousel -->
+ 
+    
+
+
+    <!-- START THE FEATURETTES -->
+
+  
+
+
+    <div class="row featurette align-items-start">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1" id="homepage_infos" style="margin-left: 12px;">
+          <a href="https://stadt.muenchen.de/service/info/medikamentenhilfe/10313859/n0/" target="_blank" style="color:#00AA89 !important; text-decoration: none;">
+            Medikamentenhilfe: <span class="text-body-secondary"></span></a></h2>
+
+        <p class="lead"  style="padding: 12px;">
+          Nachdem Sie mit einem Arzt Rücksprache genommen haben, bitten Sie um ein Grünes Rezept oder ein Privatrezept. Wenn Sie eine der teilnehmenden Apotheken des Projekts "Medikamentenhilfe" aufsuchen, legen Sie das Rezept sowie Ihren München-Pass vor. Als Teil einer Zusammenarbeit zwischen dem Gesundheitsreferat der Landeshauptstadt München, der ökumenischen Krisen- und Lebensberatungsstelle "Münchner Insel unter dem Marienplatz" sowie den Münchner Ärzten und Apothekern erhalten Sie das verschreibungsfreie Medikament zu einem ermäßigten Preis.</p>
+      </div>
+
+      <div class="col-md-5 position-relative">
+        <a href="https://stadt.muenchen.de/service/info/medikamentenhilfe/10313859/n0/" target="_blank">
+          <img src="static\logos\Apotheke_laden.jpeg" class="img-fluid" alt="Apotheken Eingang ohne Menschen"></a>
+          <div class="photographer-overlay">@Apobaer.de</div>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row align-items-start">
+      <div class="col-md-7 d-flex flex-column justify-content-start">
+        <h2 class="featurette-heading fw-normal lh-1" id="homepage_infos" style="margin-left: 12px;">
+          <a href="https://www.gesund-in-muenchen.de/" target="_blank" style="color:#00AA89 !important; text-decoration: none;">
+            Gesundheitswegweiser: <span class="text-body-secondary"></span></a></h2>
+        <p class="lead" style="padding: 12px;">
+          Sie suchen nach einer türkischsprachigen Arztpraxis, einem Pflegedienst, der Hausbesuche anbietet, oder einer Apotheke mit barrierefreiem Zugang? Der Gesundheitswegweiser ist hier, um Ihnen zu helfen! Finden Sie die passenden Gesundheitsdienstleistungen und Anbieter in Ihrer Nähe, die Ihren speziellen Bedürfnissen entsprechen. Suchen Sie nach Kriterien wie kostenlosen Angeboten, barrierearmen Einrichtungen, mehrsprachigem Personal, schneller Terminvergabe, Hausbesuchen und vielem mehr. Entdecken Sie jetzt die besten Optionen für Ihre Gesundheit mit dem Gesundheitswegweiser!</p>
+      </div>
+    
+      <div class="col-md-5 position-relative d-flex align-items-start">
+        <a href="https://www.gesund-in-muenchen.de/" target="_blank">
+          <img src="static/logos/signpost.png" class="img-fluid" alt="Wegweiser Natur">
+        </a>
+        <div class="photographer-overlay">@geralt -pixabay.com</div>
+      </div>
+    </div>
+    
+    
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette align-items-start">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1" id="homepage_infos" style="margin-left: 12px;">
+          <a href="https://www.landkreis-muenchen.de/themen/verbraucherschutz-gesundheit/gesundheit/" target="_blank" style="color:#00AA89 !important; text-decoration: none;">
+            Der Landkreis Informiert <span class="text-body-secondary"></span></a></h2>
+
+        <p class="lead"  style="padding: 12px;">
+          Die Gesundheit ist das kostbarste Gut des Menschen und liegt dem Landkreis sehr am Herzen. Wenn auch Sie die Gesundheit anderer Menschen fördern möchten und dies zu Ihrem Beruf machen wollen, sind Sie hier genau richtig. Auf unseren Seiten finden Sie nicht nur eine Vielzahl an Informationen und Gesundheitsangeboten, sondern auch Kontakte und Ansprechpartner für zahlreiche Heilberufe. Entdecken Sie Möglichkeiten in Bereichen wie Krankenpflege, Physiotherapie und vielen weiteren medizinischen Fachrichtungen. Lassen Sie sich inspirieren und finden Sie den passenden Weg, um die Gesundheit in Ihrer Gemeinschaft zu unterstützen.</p>
+      </div>
+
+      <div class="col-md-5 position-relative" ; >
+        <a href="https://www.landkreis-muenchen.de/themen/verbraucherschutz-gesundheit/gesundheit/" target="_blank">
+          <img src="static\logos\Landkreis_München.svg.png" class="img-fluid"   alt="Thermometer Logo"></a>
+          <div class="photographer-overlay" >@Landkreisamt München</div>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1" id="homepage_infos" style="margin-left: 12px;">
+          <a href="https://www.doctolib.de/physiotherapie/muenchen" target="_blank" style="color:#00AA89 !important; text-decoration: none;">
+            Physiotherapie: <span class="text-body-secondary"></span></a></h2>
+            <p class="lead" style="padding: 12px;">
+              Physiotherapie befasst sich mit der Behandlung und Vorbeugung von körperlichen Beschwerden durch gezielte Übungen und manuelle Techniken. Sie zielt darauf ab, Bewegungsabläufe zu verbessern und Schmerzen zu lindern.
+              Physiotherapie ist entscheidend für die Erhaltung und Wiederherstellung der körperlichen Funktion. Sie hilft, Schmerzen zu lindern, die Beweglichkeit zu verbessern und die Lebensqualität zu steigern, sei es nach Verletzungen, Operationen oder bei chronischen Erkrankungen.
+              Suchen Sie einen erfahrenen Physiotherapeuten in München? Unsere Praxis bietet moderne Behandlungsansätze für Ihre Gesundheit und Ihr Wohlbefinden. Vereinbaren Sie noch heute einen Termin!
+            </p>
+          
+      </div>
+      
+      <div class="col-md-5 position-relative">
+        <a href="https://www.doctolib.de/physiotherapie/muenchen" target="_blank">
+          <img src="static\logos\physiotherapie.webp" class="img-fluid" alt="Notarzt Auto Logo">
+        </a>
+        <div class="photographer-overlay">@Daniel Phillip Physiotherapeut</div>
+      </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette align-items-start">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1" id="homepage_infos" style="margin-left: 12px;">
+          <a href="https://stadt.muenchen.de/infos/hitze-gesundheit.html" target="_blank" style="color:#00AA89 !important; text-decoration: none;">
+            Hitze und Gesundheit: <span class="text-body-secondary"></span></a></h2>
+
+        <p class="lead" style="padding: 12px;">
+          Es ist ratsam, auf Hitzewarnungen zu achten, die im Internet, Radio, Fernsehen oder in der Zeitung veröffentlicht werden.
+          Alternativ können Sie auch die Temperaturentwicklung über aktuelle Wetterkarten verfolgen, um sich entsprechend vorzubereiten.
+          Der Deutsche Wetterdienst unterscheidet zwischen zwei Risikowarnstufen:<br><br>
+          Starke Hitzebelastung tritt auf, wenn die gefühlte Temperatur 32°C erreicht.<br>
+          Extreme Wärmebelastung besteht, wenn die gefühlte Temperatur 38°C übersteigt.<br>
+          Es ist wichtig, spätestens ab einer gefühlten Temperatur von 32 °C verstärkt auf Hitzeschutz zu achten.<br>
+          Besondere Aufmerksamkeit sollte älteren Mitbürgern und Kindern gelten.
+          </p>
+      </div>
+
+      <div class="col-md-5 position-relative">
+        <a href="https://stadt.muenchen.de/infos/hitze-gesundheit.html" target="_blank">
+          <img src="static\logos\thermometer_image.jpg" class="img-fluid" alt="Thermometer in der Sonne"></a>
+          <div class="photographer-overlay">@Thaut Images-adobe.stock.com</div>
+      </div>
+    </div>
+
+    
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette align-items-start">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1" id="homepage_infos" style="margin-left: 12px;">
+          <a href="https://stadt.muenchen.de/infos/notfallversorgung.html" target="_blank" style="color:#00AA89 !important; text-decoration: none;">
+            Notfallversorgung: <span class="text-body-secondary"></span></a></h2>
+            <p class="lead" style="padding: 12px;">
+              Die medizinische Notfallversorgung steht im Zentrum der Daseinsfürsorge und gewährleistet unmittelbare lebensrettende Maßnahmen. Tel.: 112 <br>
+              Bei nicht lebensbedrohlichen Beschwerden sollten Sie zunächst eine Arztpraxis aufsuchen. Wenn die Praxis geschlossen ist, abends, nachts, am Wochenende oder an Feiertagen, können Sie den Ärztlichen Bereitschaftsdienst unter der kostenfreien Nummer 116 117 erreichen.<br>
+              Dort erhalten Sie medizinische Unterstützung und, falls notwendig, wird auch ein Hausbesuch durch einen Allgemeinarzt organisiert. So sind Sie rund um die Uhr gut versorgt.
+            </p>
+          
+      </div>
+      
+      <div class="col-md-5 position-relative">
+        <a href="https://stadt.muenchen.de/infos/notfallversorgung.html" target="_blank">
+          <img src="static\logos\notarzt.jpeg" class="img-fluid" alt="Notarzt Auto Logo">
+        </a>
+        <div class="photographer-overlay">@Felix Abraham-stock.adobe.com</div>
+      </div>
+
+
+
+    <hr class="featurette-divider">
+
+    
+    <div class="row featurette align-items-start">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1" id="homepage_infos" style="margin-left: 12px;">
+          <a href="https://opendata.muenchen.de/" target="_blank" style="color:#00AA89 !important; text-decoration: none;">
+            Open Data Portal: <span class="text-body-secondary"></span></a></h2>
+
+        <p class="lead" style="padding: 12px;">
+          Die Landeshauptstadt München bietet über ihr Open Data Portal eine Vielzahl von Datensätzen der öffentlichen Verwaltung an. Dieser zentrale Zugangspunkt ermöglicht es Verwaltungsmitarbeitern, Bürgern, Unternehmen und Wissenschaftlern, die Daten frei zu nutzen und weiterzuverarbeiten. Durch die Analyse und Kombination dieser Daten können wertvolle neue Erkenntnisse und innovative Ideen entstehen.
+          Das Portal wird stetig weiterentwickelt und um neue Datensätze erweitert. 
+          </p>
+      </div>
+
+      <div class="col-md-5 position-relative">
+        <a href="https://opendata.muenchen.de/" target="_blank">
+          <img src="static\logos\opendata_lock.webp" class="img-fluid " alt="Thermometer in der Sonne"></a>
+          <div class="photographer-overlay">@matejmo gettyimages.com</div>
+      </div>
+    </div>
+
+    
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette align-items-start">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1" id="homepage_infos" style="margin-left: 12px;">
+          <a href="https://www.kliniken.de/krankenhaus/deutschland/ort/m%C3%BCnchen" target="_blank" style="color:#00AA89 !important; text-decoration: none;">
+            Krankenhäuser und Kliniken: <span class="text-body-secondary"></span></a></h2>
+            <p class="lead" style="padding: 12px;">
+              In München steht Ihnen eine Vielzahl an Krankenhäusern und Kliniken zur Verfügung, die ein breites Spektrum an medizinischen Leistungen bieten. Ob Sie eine spezialisierte Behandlung oder eine allgemeine medizinische Versorgung benötigen – hier finden Sie Einrichtungen, die auf Ihre Bedürfnisse zugeschnitten sind.
+            </p>
+          
+      </div>
+      
+      <div class="col-md-5 position-relative">
+        <a href="https://www.kliniken.de/krankenhaus/deutschland/ort/m%C3%BCnchen" target="_blank">
+          <img src="static\logos\krankenhaus.webp" class="img-fluid" alt="Notarzt Auto Logo">
+        </a>
+        <div class="photographer-overlay">@Solskin gettyimages.com</div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row">
+        <!-- Spalte 1: Explore Map -->
+        <div class="col-lg-4 d-flex flex-column align-items-center">
+          <a href="{% url 'explore' %}"> 
+            <img src="static/logos/maplocator_blue_circle.png" id="img_light_mode" class="img-fluid icon-img" alt="Blauer Kreis">
+            <img src="static/logos/explore_circle_white.png"   id="img_dark_mode"  class="img-fluid icon-img" alt="Blauer Kreis">
+          </a>
+          <h2 class="fw-normal">München Erkunden</h2>
+          <p>Begeben Sie sich auf eine Entdeckungsreise, während Sie durch interaktive Karten navigieren und verborgene Orte und neue Perspektiven aus München entdecken. Erkunden Sie München aus einem neuen Blickwinkel und lassen Sie sich überraschen.</p>
+          <p><a class="btn btn-secondary" href="{% url 'explore' %}">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      
+    <!-- Spalte 2: Analyze Data -->
+    <div class="col-lg-4 d-flex flex-column align-items-center">
+      <a href="{% url 'analyse' %}">
+        <img src="static/logos/diagramm_blue_circle.png" id="img_light_mode" class="img-fluid icon-img " alt="Blauer Kreis">
+        <img src="static/logos/analyse_circle_white.png" id="img_dark_mode" class="img-fluid icon-img " alt="Blauer Kreis">
+      </a>
+      <h2 class="fw-normal">Daten Analysieren</h2>
+      <p>Nutzen Sie die Kraft der Erkenntnisse mit unseren hochmodernen Datenanalysetools, die es Ihnen ermöglichen, Trends zu erkennen, fundierte Entscheidungen zu treffen und sinnvolle Veränderungen voranzutreiben.</p>
+      <p><a class="btn btn-secondary" href="{% url 'analyse' %}">View details &raquo;</a></p>
+    </div><!-- /.col-lg-4 -->
+      
+  
+        <!-- Spalte 3: Information -->
+        <div class="col-lg-4 d-flex flex-column align-items-center">
+          <a href="{% url 'health-information' %}"> 
+            <img src="static/logos/kreuz_blue_circle.png" id="img_light_mode" class="img-fluid icon-img" alt="Blauer Kreis">
+            <img src="static/logos/info_circle_white.png" id="img_dark_mode" class="img-fluid icon-img" alt="Blauer Kreis">
+          </a>
+          <h2 class="fw-normal">Information</h2>
+          <p>Stärken Sie sich mit umfassenden Gesundheitsinformationen, von Terminvereinbarungsmöglichkeiten bis hin zu Same Day Medikamentbestellungen, damit Sie proaktive Schritte zu einem gesünderen Lebensstil und Wohlbefinden unternehmen können.</p>
+          <p><a class="btn btn-secondary" href="{% url 'health-information' %}">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div>
+  
+
+
+
+
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+  
+</main>
+
+
+
+
+     
+
+
+{% endblock content %}
+

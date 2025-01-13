@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/Control.FullScreen.css' %}" />
+
+<style>
+    /* Light mode styles */
+    .light-mode {
+        background-color: #ffffff;
+        color: #000000;
+        --icon-color: #000000; /* Black icon color for light mode */
+
+        
+    }
+    
+    /* Dark mode styles */
+    .dark-mode {
+        background-color: #000000;
+        color: #ffffff;
+        --icon-color: #ffffff; /* White icon color for dark mode */
+
+    }
+    
+    /* Background and text color for legend */
+    .light-mode .legend {
+        background-color: #ffffff; /* White background in light mode */
+        color: #000000; /* Black text in light mode */
+    }
+    
+    .dark-mode .legend {
+        background-color: #000000; /* Black background in dark mode */
+        color: #ffffff; /* White text in dark mode */
+    }
+
+    /* Background and text color for info */
+    .light-mode .info {
+        background-color: #ffffff; /* White background in light mode */
+        color: #000000; /* Black text in light mode */
+    }
+    
+    .dark-mode .info {
+        background-color: #000000; /* Black background in dark mode */
+        color: #ffffff; /* White text in dark mode */
+    }
+
+ 
+    .mode-icons i {
+        color: var(--icon-color);
+      }
+    
+
+    .info-container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .info-section {
+        flex-grow: 1;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center; /* Center align text inside the sections */
+        background-color: #00AA89; /* Add a background color */
+      
+        border-radius: 10px; /* Apply border-radius to make the container rounded */
+    }
+    
+    .info-section a {
+        text-decoration: none; /* Remove underline from links */
+        color: inherit; /* Inherit text color */
+    }
+
+    
+    
+    .legend-color {
+        display: inline-block;
+        width: 20px; /* Adjust this according to your color indicator size */
+        height: 20px; /* Adjust this according to your color indicator size */
+        margin-right: 5px; /* Adjust the spacing between color indicator and label */
+    }
+
+    
+  
+
+    @media (min-width: 768px) {
+        .info-container {
+            flex-direction: row;
+        }
+        .info-section {
+            width: 33.33%;
+            margin-bottom: 0; /* Reset margin for horizontal layout */
+        }
+    }
+
+
+
+
+    /* Media Query for Mobile Devices: Legend below the map and map size 400x400px */
+    @media (max-width: 768px) {
+        #map {
+            height: auto; /* Reset height to allow fixed size setting */
+            padding-bottom: 0; /* Remove the padding-based aspect ratio */
+            min-width: 480px; /* Limit the maximum width to 400px */
+            min-height: 300px; /* Limit the maximum height to 400px */
+            height: 300px; /* Set fixed height */
+            margin: 0 auto; /* Center the map horizontally */
+        }
+
+    }
+
+    /* Container for the legend */
+    .legend-container {
+        display: flex;
+        flex-direction: row; /* Display legend items in a row */
+        align-items: center; /* Center align items vertically */
+        gap: 10px; /* Add some space between legend items */
+        width: 420px !important
+    }
+    
+    /* Each legend item */
+    .legend-item {
+        display: flex;
+        align-items: center; /* Center align items vertically */
+    }
+    
+    /* Color indicator */
+    .legend-color {
+        width: 20px; /* Adjust as needed */
+        height: 20px; /* Adjust as needed */
+        margin-right: 5px; /* Add some space between color indicator and label */
+    }
+
+    .leaflet-touch .leaflet-bar a {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+</style>
+
+    <container style="position: relative;">
+        <!-- The div element where the map will be rendered -->
+        <div class="h-100 p-5 rounded-3 info-container">
+            <div class="info-section" id="info" style="width: 100%"></div>
+            <div class="info-section" id="info2" style="width: 100%">
+                <h2 class="featurette-heading fw-normal lh-1">Das nächste krankenhaus ist: <span id="hospitalName"></span></h2>
+                <p class="lead" id="nearestHospitalInfo">
+                    <span id="hospitalName"></span> Adresse: <span id="hospitalAddress"></span><br>Entfernung: <span id="distanceToHospital"></span>
+                </p>
+            </div>
+
+    
+
+            <div class="info-section" id="info3" style="width: 100%">
+                <h2 class="featurette-heading fw-normal lh-1">Analyse mit den Aktuellen Daten aus dem Jahr 2022. <span id="hospitalName"></span></h2>
+                <p class="lead" >Gesamt Dichte: 4827,80</p><br>
+                <p class="lead" >Gesamt Bevölkerung: 1588330</p>
+            </div>
+        </div>
+
+            <div id="map" style="flex: 1 1 auto; height: 0; padding-bottom: 40%; position: relative;"></div>
+            <div style="flex: 1 1 40%; margin-top: 20px; padding-left: 20px;">
+                <!-- Container for the legend -->
+                <div id="legend" class="legend-container" style="opacity:0.8; margin-top: 10px;"></div>
+                <a> &copy;Die erhobenen Daten wurden vom Opendata Portal & Statistischen Amt München bereitgestellt.</a>
+
+           
+
+
+        <!-- Your JavaScript code -->
+        {% comment %} <script src="{% static 'frontend/color_change.js' %}"></script> {% endcomment %}
+        <script src="{% static 'frontend/Control.FullScreen.js' %}"></script>
+        <script src="{% static 'frontend/explorepage.js' %}"></script>
+        <script src="{% static 'frontend/explorepage2.js' %}"></script>
+        
+    </container>
+     
+{% endblock content %}

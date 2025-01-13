@@ -1,0 +1,318 @@
+<!---Splitting Main HTML file in different pieces for better strcture -->
+{% load static %}
+
+
+<style type="text/css">
+
+    @-webkit-keyframes colorChange {
+        0% { background: -webkit-linear-gradient(left, #0077CC, #01A4CA); background: linear-gradient(to right, #01A4CA, #0070CD); }
+        25% { background: -webkit-linear-gradient(left, #0077CC, #00A3C9); background: linear-gradient(to right, #00A3C9, #00D27D); }
+        50% { background: -webkit-linear-gradient(left, #0077CC, #00CF90); background: linear-gradient(to right, #00CF90, #0070CD); }
+        75% { background: -webkit-linear-gradient(left, #0077CC, #00CF90); background: linear-gradient(to right, #0077CC, #6CE5E8); }
+        100% { background: -webkit-linear-gradient(left, #0077CC, #00AA89); background: linear-gradient(to right, #0077CC, #00AA89); }
+      }
+      
+      @keyframes colorChange {
+        0% { background: linear-gradient(to right, #0077CC, #00AA89); }
+        25% { background: linear-gradient(to right, #0077CC, #6CE5E8); }
+        50% { background: linear-gradient(to right, #00AA89, #0077CC); }
+        75% { background: linear-gradient(to right, #0077CC, #6CE5E8); }
+        100% { background: linear-gradient(to right, #0077CC, #00AA89); }
+      }
+      
+      footer {
+       
+        background-color: #00AA89;
+        -webkit-animation: colorChange 8s linear infinite;
+        animation: colorChange 6s linear infinite;
+        padding: 50px 0;
+        height: auto;
+        width: auto;
+
+      }
+
+    .list-inline {
+      display: flex;
+      justify-content: center; /* Center the icons horizontally */
+      flex-wrap: wrap; /* Allow icons to wrap to the next line when needed */
+      list-style: none; /* Remove default list styles */
+      padding: 0; /* Remove any default padding */
+    }
+    
+    .list-inline-item {
+      margin: 50px; /* Adjust margin between icons */
+    }
+
+
+    ul {
+        display: flex; /* Display list items horizontally */
+        margin: 0;
+        padding: 0;
+        
+    }
+    
+    /* Tooltip text */
+    ul li a .tooltip {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+    
+        /* Position the tooltip text */
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -60px;
+    }
+    
+    /* Show the tooltip text immediately */
+    ul li a:hover .tooltip {
+        visibility: visible;
+        transition: none; /* Remove transition effect */
+    }
+    
+    ul li {
+        list-style: none;
+        margin: 0 50px; /* Adjust the spacing between list items */
+        position: relative;
+        display: inline-block;
+        
+    }
+    
+    
+    
+    
+    ul li .fa {
+        font-size: 20px; /* Adjust font size for half-sized icons */
+        color: #262626;
+        line-height: 40px; /* Adjust line height accordingly */
+        transition: .5s;
+    }
+    
+    ul li a {
+        position: relative;
+        display: block;
+        width: 40px; /* Half of the original width */
+        height: 40px; /* Half of the original height */
+        background-color: #fff;
+        text-align: center;
+        transform: perspective(50px) rotate(-15deg) skew(20deg) translate(0, 0); /* Adjusted transformation */
+        transition: .5s;
+        box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.5); /* Adjusted shadow */
+        
+    }
+
+
+
+    
+    ul li a::before {
+        content: "";
+        position: absolute;
+        top: 5px; /* Adjusted top position */
+        left: -10px; /* Adjusted left position */
+        height: 100%;
+        width: 10px; /* Adjusted width */
+        background: #b1b1b1;
+        transition: .5s;
+        transform: rotate(0deg) skewY(-40deg); /* Adjusted transformation */
+    }
+    
+    ul li a::after {
+        content: "";
+        position: absolute;
+        top: 40px; /* Adjusted top position */
+        left: -5.5px; /* Adjusted left position */
+        height: 10px; /* Adjusted height */
+        width: 40px; /* Adjusted width */
+        background: #b1b1b1;
+        transition: .5s;
+        transform: rotate(0deg) skewX(-40deg); /* Adjusted transformation */
+    }
+    
+    ul li a:hover {
+        transform: perspective(100px) rotate(-20deg) skew(20deg) translate(10px, -10px); /* Adjusted transformation */
+        box-shadow: -25px 25px 25px rgba(0, 0, 0, 0.5); /* Adjusted shadow */
+    }
+    
+    ul li:hover:nth-child(1) a {
+        background: #3b5999;
+    }
+    
+    ul li:hover:nth-child(1) a:before {
+        background: #2e4a86;
+    }
+    
+    ul li:hover:nth-child(1) a:after {
+        background: #4a69ad;
+    }
+    
+    ul li:hover:nth-child(2) a {
+        background: #55acee;
+    }
+    
+    ul li:hover:nth-child(2) a:before {
+        background: #4184b7;
+    }
+    
+    ul li:hover:nth-child(2) a:after {
+        background: #4d9fde;
+    }
+    
+    ul li:hover:nth-child(3) a {
+        background: linear-gradient(#400080, transparent), linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
+    }
+    
+    ul li:hover:nth-child(3) a:before {
+        background: linear-gradient(#400080, transparent), linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
+    }
+    
+    ul li:hover:nth-child(3) a:after {
+        background: linear-gradient(#400080, transparent), linear-gradient(200deg, #d047d1, #ff0000, #ffff00);
+    }
+    
+    ul li:hover:nth-child(4) a {
+        background: #0077B5;
+    }
+    
+    ul li:hover:nth-child(4) a:before {
+        background: #036aa0;
+    }
+    
+    ul li:hover:nth-child(4) a:after {
+        background: #0d82bf;
+    }
+   
+    
+
+
+   
+
+
+    /* From Webproject Footer (classic footer withhover effect)*/
+    .footer-link {
+        color: #000000; /* Bootstrap primary color for links */
+        text-decoration: none;
+        font-size: 22px;
+    }
+    
+    .footer-link:hover {
+        text-decoration: underline;
+    }
+    
+    .footer-logos {
+        margin-top: 10px;
+    }
+    /* alignign items to the center horizonatly and verticaly */
+    .footer-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* settign all images on same size*/
+    .footer-img {
+        width: 140px; /* Set a uniform width */
+        height: 140px; /* Set a uniform height */
+        object-fit: contain; /* Maintain aspect ratio */
+        transition: transform 0.2s ease-in-out;
+    }
+
+    /* typical footer img interaction--> hover effect*/
+    .footer-logo img:hover {
+        transform: scale(1.2);
+    }
+
+
+
+
+/* Media query for smaller screens (e.g., mobile devices) */
+@media screen and (max-width: 768px) {
+    .footer-logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; /* Distribute items evenly */
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-link {
+        margin: 5px 0;
+    }
+
+    .list-inline.mode-icons {
+        display: flex;
+        flex-direction: row; /* Change direction to column */
+        align-items: center; /* Center items vertically */
+        padding-left: 0; /* Remove default padding */
+    }
+
+    .list-inline-item.col-auto {
+        margin: 5px; /* Adjust margin */
+    }
+}
+</style>
+<!---Footer-->
+
+
+<div class="d-flex flex-column footer"  id="footer" style="width:100% !important">
+    <!-- Navigation Links -->
+
+
+    <!-- Social Media Icons -->
+    <!--- OPTIONAL:
+            <li class="list-inline-item col-auto"><a href="https://www.muenchen.de/" title="München Homepage"><i class="fa fa-building" aria-hidden="true"></i></a></li>
+            <li class="list-inline-item col-auto"><a href="#" title="PLUS Salzburg Homepage"><i class="fa fa-university" aria-hidden="true"></i></a></li>
+    -->
+
+    
+
+
+
+        <div class="footer-logos d-flex flex-wrap justify-content-center align-items-center">
+            <a href="{% url 'homepage' %}" title="Homepage" class="footer-logo mx-2 mb-3">
+                <img class="footer-img" src="{% static 'logos/LOGO_HEALTHHUB_BLACK-removebg-preview.png' %}" alt="Healt Hub Logo">
+            </a>
+            <a href="https://github.com" title="Git Hub Repo" class="footer-logo mx-2 mb-3">
+                <img class="footer-img"  src="{% static 'logos/GitHub-Logo.wine.png' %}" alt="GitHub Logo">
+            </a>
+            <a href="https://www.plus.ac.at" title="Universität Salzburg" class="footer-logo mx-2 mb-3">
+                <img class="footer-img" src="{% static 'logos/LOGO-PLUS-removebg-preview.png' %}" alt="PLUS Logo">
+            </a>
+            <a href="https://www.salzburg.info" title="Landeshauptstadt München" class="footer-logo mx-2 mb-3">
+                <img class="footer-img"  style="width: 220px; height: 220px !important" src="{% static 'logos/stadtlogo-muenchen-removebg-preview.png' %}" alt="Stadt München Logo">
+            </a>
+
+        </div>
+
+        <div class="footer-logos d-flex flex-wrap justify-content-center align-items-center">
+            <ul class="list-inline mode-icons row justify-content-center">
+                <!-- Social media icons -->
+                <li class="list-inline-item col-auto"><a href="https://www.facebook.com/Stadt.Muenchen" title="München Facebook Account"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li class="list-inline-item col-auto"><a href="https://twitter.com/StadtMuenchen" title="München Twitter Account"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li class="list-inline-item col-auto"><a href="https://www.instagram.com/stadtmuenchen/" title="München Instagram Account"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li class="list-inline-item col-auto"><a href="https://de.linkedin.com/company/stadt-muenchen" title="München LinkedIn Account"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+
+        <div style="margin-top:50px" class="footer-links d-flex justify-content-center mb-3">
+            <a href="/impressum" class="footer-link mx-2">Impressum</a>
+            <a href="/datenschutz" class="footer-link mx-2">Datenschutzerklärung</a>
+            <a href="{% url 'kontakt' %}" class="footer-link mx-2">Kontakt</a>
+        </div>
+</div>
+<!--- END Footer-->
+
+
+
+<!--- Nececcary Bootsrtap JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!--- Unececcary Bootsrtap JS-->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>

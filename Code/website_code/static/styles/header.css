@@ -1,0 +1,162 @@
+  /* base styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: #000000;
+}
+
+
+
+
+/* Off-screen menu */
+.off-screen-menu {
+    background: linear-gradient(to left, #00AA89,  #0077CC);
+    height: 100% !important;
+    width: 80%; /* Adjusted width for better mobile view */
+    position: fixed;
+    top: 0;
+    right: -100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem; /* Adjusted font size for better visibility */
+    transition: right 0.3s ease;
+    overflow-y: auto; /* Added to handle overflow */
+    z-index: 10000;
+    
+}
+
+.off-screen-menu.active {
+    right: 0;
+}
+
+/* Navbar */
+nav {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between; /* Ensure items are spaced out */
+    background: linear-gradient(to right, #0077CC, #00AA89);
+    z-index: 10;
+}   
+
+
+
+/* ham menu */
+.ham-menu {
+    height: 50px;
+    width: 40px;
+    position: absolute; /* Change to absolute */
+    top: 1rem; /* Adjust as needed */
+    right: 1rem; /* Adjust as needed */
+    cursor: pointer;
+}
+
+.ham-menu span {
+    height: 5px;
+    width: 100%;
+    background-color: #000000;
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s ease;
+    z-index:100001
+}
+
+
+.ham-menu span:nth-child(1) {
+    top: 25%;
+}
+.ham-menu span:nth-child(3) {
+    top: 75%;
+}
+.ham-menu.active span {
+    background-color: black;
+}
+.ham-menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* main-content */
+.main-content {
+    transition: margin-right .3s ease;
+}
+.main-content.shifted {
+    margin-right: 25%;
+}
+
+.homereturn {
+  transition: margin-right .3s ease;
+  }
+  .homereturn.shifted {
+      margin-right: 25%;
+  }
+
+
+/* Show ham-menu only on mobile devices */
+@media (max-width: 768px) {
+  .ham-menu {
+    display: block;
+  }
+  .homereturn{
+      display: block
+  }
+  .laptop-header {
+      display: none;
+    }
+
+}
+
+@media (min-width: 769px) {
+  .ham-menu {
+    display: none;
+  }
+  .homereturn{
+      display: none
+  }
+  .laptop-header {
+      display: block;
+    }
+  
+}
+
+
+/* Custom header logo nach bar section */
+
+
+/* Header specific hover effect for  background */
+.header-li-element a:hover {
+    background: #3D9166 !important; /* Marine blue */
+}
+
+.header-li-element a:hover::before{
+    background: #68AF8B !important; /* Darker marine blue */
+
+}
+.header-li-element a:hover::after {
+        background: #68AF8B !important; /* Lighter marine blue */
+}
+
+
+

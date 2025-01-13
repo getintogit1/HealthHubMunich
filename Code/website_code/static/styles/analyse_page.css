@@ -1,0 +1,126 @@
+      /* Light mode styles */
+      .light-mode {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    /* Dark mode styles */
+    .dark-mode {
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+    
+pre {
+  font-size: 7em;
+}
+
+.map-path{
+  stroke: #f0f0f0;
+ stroke-width: 0.1em;
+
+}
+
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 8px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .1;
+  transition: opacity .1s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #0412d8;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+
+.slidecontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  flex: 0 0 auto;
+}
+
+.slider {
+  flex: 1 1 auto;
+  margin: 0 10px;
+}
+
+
+
+
+.axis-label, .dropdown-label {
+  font-size: 2.5em;
+  fill: #635F5D;
+  color: #635F5D;
+}
+.menu-container {
+  display: inline-block; /* Display each dropdown container as an inline-block element */
+  margin-right: 20px; /* Add some spacing between the dropdowns */
+  
+}
+
+
+
+.label-container {
+  display: flex;
+  align-items: center;
+  
+}
+
+.label {
+  margin-right: 10px; /* Adjust as needed */
+  font-weight: bold; /* Example styling */
+}
+
+.custom-dropdown-toggle {
+  background-color: #137B80;
+  border-color: #137B80;
+  color: #ffffff; /* Text color */
+}
+
+.custom-dropdown-toggle:hover {
+background-color: #0d5356; /* Darker shade when hovered */
+border-color: #0d5356;
+color: #ffffff; /* Text color on hover */
+}
+
+
+/* HOVERING OVER AN DISTRICT ANIMATION*/
+.map-path {
+  transition: all 0.3s ease;
+}
+
+.map-path.hovered {
+  fill: rgb(13, 188, 141);
+  
+  stroke-width: 5;
+  
+}
+
+
+
+
+

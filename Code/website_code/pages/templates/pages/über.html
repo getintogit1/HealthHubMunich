@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<script type="text/javascript" src="{% static 'frontend/color_change.js' %}"></script>
+
+<style>
+    /* Zusätzliche Anpassungen für dunklen Modus */
+    .light-mode  {
+        background-color: #ffffff;
+        color: #000000;
+    }
+    
+    .dark-mode {
+        background-color: #333333;
+        color: #ffffff;
+    }
+</style>
+<div class="container">
+    <h1>Über </h1>
+
+</div>
+
+
+<div class="footer">
+    &copy; 2024 Lukas Günter
+</div>
+
+{% endblock content %}
+
+ 

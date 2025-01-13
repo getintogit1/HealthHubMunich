@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<style>
+
+/* Light mode styles */
+.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+  --icon-color: #000000; /* Black icon color for light mode */
+}
+      
+/* Dark mode styles */
+.dark-mode {
+  background-color: #000000;
+  color: #ffffff;
+  --icon-color: #ffffff; /* White icon color for dark mode */
+}
+
+.mode-icons i {
+  color: var(--icon-color);
+} 
+pre {
+  font-size: 8em;
+}
+
+.map-path{
+  stroke: #f0f0f0;
+ stroke-width: 0.2em;
+
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 80% !important;
+  height: 30px;
+  border-radius: 8px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .1;
+  transition: opacity .1s;
+  flex: 1 1 auto;
+  margin: 0 10px;
+  
+
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+  background: #3661AA;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slidecontainer {
+  display: 0 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px
+}
+
+
+
+.axis-label, .dropdown-label {
+  font-size: 2.5em;
+  fill: #3661AA;
+  color: #3661AA;
+}
+
+.menu-container {
+  display: inline-block; /* Display each dropdown container as an inline-block element */
+  margin-right: 20px; /* Add some spacing between the dropdowns */
+  
+}
+
+.label-container {
+  display: flex;
+  align-items: center;
+  
+}
+
+.label {
+  margin-right: 10px; /* Adjust as needed */
+  font-weight: bold; /* Example styling */
+  flex: 0 0 auto;
+  font-size: 25px
+}
+
+
+/* HOVERING OVER AN DISTRICT ANIMATION*/
+.map-path {
+  transition: all 0.3s ease;
+}
+
+.map-path.hovered {
+  fill: rgb(13, 188, 141);
+  
+  stroke-width: 6;
+  
+}
+
+.Title{
+  font-size:30px
+}
+
+svg.custom-svg {
+  width: 900px !important;
+  height: 600px !important;
+}
+
+#analyse {
+  display: flex; /* Enables flexbox layout */
+  justify-content: center; /* Centers the content horizontally */
+  align-items: center; /* Centers the content vertically, if needed */
+  margin: 0 auto; /* Auto margins to center the container itself */
+  padding: 20px; /* Optional: Add padding for inner spacing */
+  max-width: 1200px; /* Optional: Set a max-width to prevent excessive stretching */
+  width: 100%; /* Ensure the div takes full available width */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+/* Media query for mobile views */
+@media (max-width: 768px) {
+  .custom-svg {
+    width: 90%; /* Make the SVG 90% of the screen width */
+    max-width: 100%; /* Prevent exceeding the container's width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the SVG within its container */
+  }
+
+  .slidecontainer {
+    flex-direction: row; /* Keep elements in a row */
+    justify-content: center; /* Center align the container elements */
+    align-items: center; /* Center align items vertically */
+    width: 100%; /* Ensure the container takes full width */
+  }
+
+  .slider {
+    width: 70% !important; /* Set slider width to fit better on mobile */
+    margin: 0 5px; /* Add some margin for spacing */
+  }
+
+  .label {
+    font-size: 18px; /* Adjust label font size for better readability */
+  }
+
+}
+
+</style>
+
+
+
+
+  <div id="analyse"></div>
+
+
+
+
+  <script type="text/javascript" src="{% static 'frontend/analysepage/bundle.js' %}"></script>
+  <script type="text/javascript" src="{% static 'frontend/color_change.js' %}"></script>
+
+
+
+
+  {% comment %} {% load static %}
+  <img src="{% static 'my_app/example.jpg' %}" > {% endcomment %}
+
+
+<hr class="featurette-divider">
+
+<a> &copy;Die erhobenen Daten wurden vom Opendata Portal & Statistischen Amt München bereitgestellt.</a>
+
+  <script type="text/javascript" src="{% static 'frontend/analysepage/bundle.js' %}"></script>
+  <script type="text/javascript" src="{% static 'frontend/color_change.js' %}"></script>
+
+{% endblock content %}
+

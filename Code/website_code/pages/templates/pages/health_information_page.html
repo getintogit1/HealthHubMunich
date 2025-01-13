@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+/* Light mode styles */
+
+    .light-mode {
+        background-color: #ffffff;
+        color: #000000;
+        --icon-color: #000000; /* Black icon color for light mode */
+
+        
+    }
+    
+    /* Dark mode styles */
+    .dark-mode {
+        background-color: #000000;
+        color: #ffffff;
+        --icon-color: #ffffff; /* White icon color for dark mode */
+
+    }
+
+    .mode-icons i {
+        color: var(--icon-color);
+      }
+.transparent-btn {
+    
+    border: 3px solid; /* Adjusted border width */
+    border-color: var(--btn-border-color); /* Border color */
+    color: var(--btn-text-color);
+}
+
+/* Update text color on hover for light mode */
+.light-mode .transparent-btn:hover {
+    color: #000000; /* Text color on hover for light mode */
+
+}
+
+/* Update text color on hover for dark mode */
+.dark-mode .transparent-btn:hover {
+    color: #ffffff; /* Text color on hover for dark mode */
+
+}
+
+
+</style>
+
+<script  type="text/javascript" src="{% static 'frontend/color_change.js' %}"></script>
+
+
+
+  
+      
+
+<div class="container py-4">
+
+  <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">Willkommen in der Welt der Gesundheit in München</h1>
+      <p class="col-md-8 fs-4">Entdecken Sie hier eine Vielzahl von Gesundheitsdiensten und Informationen für München. Nutzen Sie unsere Angebote und Services, um Ihre Gesundheit optimal zu unterstützen.</p>
+  </div>
+
+  <!-- 1 row Docto Lib-->
+  <div class="row align-items-md-stretch">
+    <div class="col-md-12" style="padding: 5px;">
+        <div class="h-100 p-5 rounded-3" id="textbox" style="background-color: #0077CC;">
+            <h2>Docto Lib</h2>
+            <p  style="font-size: 22px;">Entdecken Sie eine umfangreiche Auswahl an Medizinern und Fachärzten in München auf Docto Lib. Vereinbaren Sie noch heute Ihren nächsten Arzttermin online.</p>
+            <a href="https://www.doctolib.de/arzt/muenchen" style="background-color: #0077CC;" class="btn btn-primary btn-lg transparent-btn" >Mehr Infos &raquo;</a>
+        </div>
+    </div>
+</div>
+
+  <!-- 2 row Jameda -->
+  <div class="row align-items-md-stretch">
+    <div class="col-md-12" style="padding: 5px;">
+        <div class="h-100 p-5 rounded-3" id="textbox" style="background-color: #566CF7;">
+            <h2>Jameda</h2>
+            <p style="font-size: 22px;">Vergleichen Sie eine breite Auswahl an Ärzten und Fachärzten in München auf Jameda. Lesen Sie Bewertungen, sehen Sie Profile ein und vereinbaren Sie Ihren nächsten Arzttermin online.</p>
+            <a href="https://www.jameda.de/suchen?q=&loc=M%C3%BCnchen" style="background-color: #566CF7;" class="btn btn-primary btn-lg transparent-btn">Mehr Infos &raquo;</a>
+        </div>
+    </div>
+</div>
+
+<!-- 3 row Alle Ärzte in München -->
+<div class="row align-items-md-stretch">
+  <div class="col-md-12" style="padding: 5px;">
+      <div class="h-100 p-5 rounded-3" style="background-color: #8381EE;">
+          <h2>Alle Ärzte in München</h2>
+          <p style="font-size: 22px;">Verschaffen Sie sich einen Überblick über alle Ärzte aus allen Fachrichtungen aus München!</p>
+          <a href="https://www.muenchen.de/service/branchenbuch/guide/aerzte.html" style="background-color: #8381EE;" class="btn btn-primary btn-lg transparent-btn" >Mehr Infos &raquo;</a>
+      </div>
+  </div>
+</div>
+
+<!-- 4 row ApoMinga -->
+<div class="row align-items-md-stretch">
+    <div class="col-md-12" style="padding: 5px;">
+        <div class="h-100 p-5 rounded-3" style="background-color: #00AA89;">
+            <h2>Apo Minga</h2>
+            <p style="font-size: 22px;">Heute bestellt, heute geliefert! Wählen Sie aus zahlreichen münchnern Apotheken und lassen Sie sich flexibel Ihre Medikamente nach Hause liefern oder profesionell vor Ort beraten.</p>
+            <a href="https://www.apominga.de/" style="background-color: #00AA89;" class="btn btn-primary btn-lg transparent-btn" >Mehr Infos &raquo;</a>
+        </div>
+    </div>
+</div>
+
+  <!-- 5 row GetMayD-->
+  <div class="row align-items-md-stretch">
+    <div class="col-md-12" style="padding: 5px;">
+        <div class="h-100 p-5 rounded-3" style="background-color: #0077CC;">
+            <h2>MAYD</h2>
+            <p style="font-size: 22px;">MAYD ist einer von Deutschlands größten Medikamenten Lieferdienste und liefert Ihnen noch am selben Tag Ihre Medikamente vor die Haustür.</p>
+            <a href="https://www.getmayd.com/apotheke-lieferdienst/muenchen/" style="background-color: #0077CC;" class="btn btn-primary btn-lg transparent-btn" >Mehr Infos &raquo;</a>
+        </div>
+    </div>
+</div>
+
+  <!-- 6 row Shop APotheke -->
+  <div class="row align-items-md-stretch">
+    <div class="col-md-12" style="padding: 5px;">
+        <div class="h-100 p-5 rounded-3" style="background-color: #566CF7;">
+            <h2>Shop Apotheke</h2>
+            <p style="font-size: 22px;">Ist Ihr Medikament nicht mehr verfügbar ? Schauen Sie doch auf Deutschlands größter Online Apotheke und bestellen Sie es sich bequem nach Hause.</p>
+            <a href="https://www.shop-apotheke.com/" style="background-color: #566CF7;" class="btn btn-primary btn-lg transparent-btn" >Mehr Infos &raquo;</a>
+        </div>
+    </div>
+</div>
+
+<!-- 7 row Gesund in München -->
+<div class="row align-items-md-stretch">
+  <div class="col-md-12" style="padding: 5px;">
+      <div class="h-100 p-5 rounded-3" style="background-color: #8381EE;">
+          <h2>Gesund in München</h2>
+          <p style="font-size: 22px;">Entdecken Sie alles rund ums Thema Gesundheit in München. </p>
+          <a href="https://www.gesund-in-muenchen.de/" style="background-color: #8381EE;" class="btn btn-primary btn-lg transparent-btn" >Mehr Infos &raquo;</a>
+      </div>
+  </div>
+</div>
+
+<!-- 8 row Gesundheitsreferat München -->
+<div class="row align-items-md-stretch">
+    <div class="col-md-12" style="padding: 5px;">
+        <div class="h-100 p-5 rounded-3" style="background-color: #00AA89;">
+            <h2>Gesundheitsreferat</h2>
+            <p style="font-size: 22px;">Bleiben Sie auf dem neuesten Stand und schauen Sie beim Gesundheitsreferat München vorbei.</p>
+            <a href="https://stadt.muenchen.de/rathaus/verwaltung/gesundheitsreferat.html" style="background-color: #00AA89;" class="btn btn-primary btn-lg transparent-btn" >Mehr Infos &raquo;</a>
+          </div>
+    </div>
+
+</div>
+
+
+
+  
+
+{% endblock content %}
