@@ -22,10 +22,11 @@ Exploring health data in Munich for insights into public health trends, epidemio
 
 ## Preview
 ```sh
-git clone
-cd /code/
+git clone "https://github.com/getintogit1/HealthHubMunich.git"
+cd HealthHubMunich
+cd code
 pip install -r requirements.txt
-cd /website_code/
+cd website_code
 python manage.py runserver
 ```
 
