@@ -26,6 +26,12 @@
 - Dark and light visualizations for user preferences
 
 ## Example Videos
+| Page             | Video                                |
+| ---------------- | ------------------------------------ |
+| 🏠 Home Page     | [▶ Watch](./Images/HomePage.mp4)     |
+| 🗺️ Map Page     | [▶ Watch](./Images/MapPage.mp4)      |
+| 📊 Analysis Page | [▶ Watch](./Images/AnalysePage.mp4)  |
+| 📞 Contact Page  | [▶ Watch](./Images/ConbtactPage.mp4) |
 
 
 ## 📊 Data Sources
