@@ -55,7 +55,7 @@ This Web App is a modern web application that visualizes the distribution and ac
   
 ## Preview
 ```sh
-git clone "https://github.com/getintogit1/HealthHubMunich.git"
+git clone "https://github.com/getintogit1/Healthcare-Access-Platform.git"
 cd HealthHubMunich
 cd code
 pip install -r requirements.txt
