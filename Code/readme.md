@@ -84,5 +84,4 @@ than run: <br>
 - [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
 
-## Contact
-For any inquiries or suggestions, feel free to contact [Lukas Günter](mailto:lukas.guenter@stud.plus.ac.at).
+

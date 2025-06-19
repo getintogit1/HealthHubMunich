@@ -21,12 +21,15 @@ Data-Driven Insights for Public Health Action
 Exploring health data in Munich for insights into public health trends, epidemiology, and healthcare provision. Collaborative platform for data-driven analysis and decision-making.
 
 ## Preview
+```sh
+git clone "https://github.com/getintogit1/HealthHubMunich.git"
+cd HealthHubMunich
+cd code
+pip install -r requirements.txt
+cd website_code
+python manage.py runserver
+```
 
-Check out this [video demonstration version 1.0](https://git.sbg.ac.at/s1086122/designstudio_ss24/-/blob/main/Website%20Doku/Verison_1.mp4).<br>
-Check out this [video demonstration version 2.0](https://git.sbg.ac.at/s1086122/designstudio_ss24/-/blob/main/Website%20Doku/Version_2.mp4).
-
-## Link to Website
-www.healthhub-munich.info
 
 ## License
 The license is temporary and can be changed as the project progresses.
