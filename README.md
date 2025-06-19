@@ -65,6 +65,3 @@ python manage.py runserver
 
 
 
-
-## Project status
-Progress: [██████████████████████]100%
