@@ -1,25 +1,45 @@
-# DesignStudio_SS24
-<img src="Images/LOGO_HEALTHHUB_TEXT.png" alt="Survey" width="480" height="480"><br>
+# A Healthcare Access & Density Visualization Web App
 
-## Gantt Overview
-![Gant Chart Overviewiewt](Images/Gantchart_APView.png)
+**This Web App** is a modern web application that visualizes the distribution and accessibility of healthcare facilities across Munich. It combines interactive maps, statistical data, and real-time analysis tools to inform citizens, researchers, and policymakers about healthcare density, proximity, and service gaps.
 
-## Roadmap
-[Click here to see the roadmap.](https://git.sbg.ac.at/s1086122/designstudio_ss24/-/wikis/Roadmap)
+## Tech Stack
+<p align="center"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="50" height="50" alt="HTML5"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="50" height="50" alt="CSS3"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="50" height="50" alt="JavaScript"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="50" height="50" alt="React"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/d3js/d3js-original.svg" width="50" height="50" alt="D3.js"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="50" height="50" alt="Bootstrap"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="50" height="50" alt="Python"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" width="50" height="50" alt="Django"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" width="50" height="50" alt="Jupyter Notebook"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" width="50" height="50" alt="SQLite"/> </p>
 
-### Survey
-!! The Survey Submisson has ended !!
-[Click here to see the Survey.](https://git.sbg.ac.at/s1086122/designstudio_ss24/-/wikis/Survey)<br>
-Or scan the QR Code below: <br>
-<img src="Images/Health_Hub_Munich_Survey.png" alt="Survey" width="240" height="240"><br>
+## 🚀 Features
 
-## Name
-<strong>Health Hub Munich </strong> <br>
-Data-Driven Insights for Public Health Action
+- 📍 **Interactive Map**: Displays pharmacies, hospitals, and doctors with district-wise filters.
+- 📊 **Statistical Insights**: Visualizes population-to-facility ratios across time (2010–2022).
+- 🏥 **Nearest Hospital Info**: Dynamically calculates and displays the nearest healthcare center.
+- 🌗 **Map Themes**: Toggle between light, dark, and normal themes for better readability.
+- 📅 **Time Slider**: Explore historical data over a timeline.
+- 📈 **Data Analysis**: Integrated tools to analyze healthcare density trends in Munich.
 
-## Description
-Exploring health data in Munich for insights into public health trends, epidemiology, and healthcare provision. Collaborative platform for data-driven analysis and decision-making.
 
+- **Mapping**:
+  - Leaflet.js / OpenStreetMap for geolocation
+  - GeoJSON for district borders
+
+## 📍 Example View
+
+- OCM Orthopädische Chirurgie München marked with detailed location
+- District-wise breakdown of pharmacies per resident
+- Dark and light visualizations for user preferences
+
+## Example Videos
+| Page             | Video                                |
+| ---------------- | ------------------------------------ |
+| 🏠 Home Page     | [▶ Watch](./Images/HomePage.mp4)     |
+| 🗺️ Map Page     | [▶ Watch](./Images/MapPage.mp4)      |
+| 📊 Analysis Page | [▶ Watch](./Images/AnalysePage.mp4)  |
+| 📞 Contact Page  | [▶ Watch](./Images/ConbtactPage.mp4) |
+
+
+## 📊 Data Sources
+
+- Public health data from Stadt München
+- GeoData for districts and healthcare facility coordinates
+- Analysis based on year 2022 with comparison back to 2010
+  
 ## Preview
 ```sh
 git clone "https://github.com/getintogit1/HealthHubMunich.git"
@@ -31,8 +51,7 @@ python manage.py runserver
 ```
 
 
-## License
-The license is temporary and can be changed as the project progresses.
+
 
 ## Project status
 Progress: [██████████████████████]100%
